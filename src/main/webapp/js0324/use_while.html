@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//0~10까지 선택할 수 있는 radio를 작성
+let i=0;
+
+while(i<11){
+	document.write("<input type='radio' name='score' value='"+i+"'"+
+			(i==0?"checked='checked'":"")+"/><b>"+i+"점</b> &nbsp;")//반복수행문장
+	i++;//증감소식
+}//end while
+	
+	
+document.write("</br>");
+//do~while
+//1~100까지의 수 중에 홀수만 출력
+i=1;// 초기값
+do{
+	document.write(i+" ");//반복 수행 문자
+	i+=2;//증.감소식
+}while(i<101);//조건식
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

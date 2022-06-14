@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+/* 디자인 시작 */
+#wrap{ width:1200px; height:1200px; margin: 50px auto;}
+
+#header{ height:230px; position: relative; 
+		background: #000000 url(http://localhost/html_prj/common/images/pattern2.png); }
+#headerText{ width:300px ; height:70px; position: absolute; top: 50px ; left:60px ; font-weight:bold;
+			font-size:40px; font-family:고딕;}
+#naviBar{ width:1200px; height:60px; position:absolute; top: 170px; }
+
+
+#container{ height:820px; }
+
+
+#footer{ height:230px;  position:relative; }
+#footerText{ float:right; padding-right: 20px; font-weight: bold; font-size: 20px; color:#2C272C;
+			padding-top: 40px }
+/* 디자인 끝 */
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	document.getElementById("popupBtn").addEventListener("click",popupCenter);
+	document.getElementById("popupBtn1").addEventListener("click",popupCenter1);
+	document.getElementById("popupBtn2").addEventListener("click",popupCenter2);
+}//onload
+
+function popupCenter(){
+	//부모창에서 자식창을 띄운다.
+	//alert(window.screenX+"/"+window.screenY);
+	window.open("child.html","idDupWin","width=360,height=210,top="+(window.screenTop+150)+",left="
+			+(window.screenY+300));
+}//popupCenter
+
+function popupCenter1(){
+	//부모창에 존재하는 값을 전달하여 자식창을 띄운다.
+	//1.자식창을 변수에 저장
+	var subWin=window.open("child.html","idDupWin","width=360,height=210,top="+(window.screenTop+150)+",left="
+			+(window.screenY+300));
+	//2.변수를 사용하여 자식창에 값을 설정한다.
+	subWin.window.document.cFrm.id.value=document.pFrm.id1.value;
+}//popupCenter1
+
+
+function popupCenter2(){
+	//부모창에 존재하는 값을 전달하여 자식창을 띄운다.
+	//1.jsp를 팝업창에 넣고, parameter를 생성하여 값을 전달한다.
+	var subWin=window.open("child.jsp?id="+document.pFrm.id2.value,"idDupWin","width=360,height=210,top="
+			+(window.screenTop+150)+",left="+(window.screenY+300));
+	
+	//2.변수를 사용하여 자식창에 값을 설정한다.
+	subWin.window.document.cFrm.id.value=document.pFrm.id2.value;
+}//popupCenter2
+
+
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="headerText">Class 4.</div>
+		<div id="naviBar">
+		
+		</div>
+	</div>
+	<div id="container">
+	<h2>회원가입</h2>
+	<form name="pFrm">
+	<table>
+	<tr>
+		<td><label>아이디</label></td>
+		<td>
+		<input type="text" name="id" class="inputBox" readonly="readonly"/>
+		<input type="button" value="중복확인" class="btn" id="popupBtn"/>
+		</td>
+	</tr>
+	<tr>
+		<td><label>아이디</label></td>
+		<td>
+		<input type="text" name="id1" id="id1" class="inputBox"/>
+		<input type="button" value="중복확인 값 전달" class="btn" id="popupBtn1"/>
+		</td>
+	</tr>
+	<tr>
+		<td><label>아이디</label></td>
+		<td>
+		<input type="text" name="id2" id="id2" class="inputBox"/>
+		<input type="button" value="중복확인 값 전달 JSP" class="btn" id="popupBtn2"/>
+		</td>
+	</tr>
+	</table>
+	</form>
+	
+	</div>
+	<div id="footer">
+		<div id="footerText">
+		CopyRight&copy;class 4. All Right Reserved.
+		</div>
+	</div>
+</div>
+</body>
+</html>

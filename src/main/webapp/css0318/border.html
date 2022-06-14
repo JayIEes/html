@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>border</title>
+<style type="text/css">
+div{margin: 10px}
+/* 모든 선 변경 */
+.all{border:3px double #000000}/* 선 종류: solid,dotted,dashed,double */
+.left{border-left: 2px solid #FF0000}
+.top{border-top: 3px dotted #0000FF}
+.right{border-right: 4px dashed #00FF00}
+.bottom{border-bottom: 3px double #333}
+.borderline{ border-left: 1px solid #000000; border-top: 2px dashed #FF0000 ;
+border-right: 1px dotted #0000FF; border-bottom: 1px solid #FFE400}
+
+#all{border-left: 1px solid #000000; border-top: 2px dashed #FF0000;
+	border-right: 1px dotted #0000FF; border-bottom: 1px solid #FFE400}
+#input{border-left: 0px; border-top: 0px; border-right: 0px; border-bottom: 1px solid #000000 }
+
+table{border-top: 1px solid #0000FF; border-bottom: 1px solid #0000FF }
+img{border-left: 1px solid #FF0000; border-right: 1px solid #FF0000 }
+
+</style>
+</head>
+<body>
+<div class="all">모든선</div>
+<div class="left">왼쪽선</div>
+<div class="top">윗쪽선</div>
+<div class="right">오른쪽선</div>
+<div class="bottom">아랫쪽선</div>
+<div class="borderline">왼쪽 선은 1px 실선 검은색, 위쪽선은 2px 긴 점선 빨간색, 오른쪽 선은 1px에 짧은 점선 파란색, 아래쪽선은 1px 실선 노란색
+</div>
+<div id="all">왼쪽 선은 1px 실선 검은색, 위쪽선은 2px 긴 점선 빨간색, 
+오른쪽 선은 1px에 짧은 점선 파란색, 아래쪽선은 1px 실선 노란색
+</div>
+
+<div style="border:3px double #000000">
+왼쪽 선은 1px 실선 검은색, 위쪽선은 2px 긴 점선 빨간색, 
+오른쪽 선은 1px에 짧은 점선 파란색, 아래쪽선은 1px 실선 노란색
+</div>
+
+<!-- 아래 input의 왼,위,오른쪽 선은 보여주지 않고, 아래쪽 선만 1px실선 검은색 설정 -->
+<input type="text" name="name" id="input"/>
+<br/><br/>
+<table>
+<tr>
+	<th width="50">번호</th>
+	<th width="120">이름</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>황성준</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>권용현</td>
+</tr>
+</table>
+<br/>
+<img src="../common/images/right_arrow.png"/>
+</body>
+</html>

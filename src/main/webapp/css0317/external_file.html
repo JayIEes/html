@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부 파일 방식으로 CSS연결 -->
+<link rel="stylesheet" type="text/css" href="http://localhost/html_prj/css0317/external.css"/>
+
+<!-- embed방식 : embed방식이 외부파일방식보다 우선 -->
+<style type="text/css">
+span{ font-size: 15px; color:#FF0000}
+</style>
+</head>
+<body>
+
+<strong>외부파일방식</strong><br/>
+일반글자<br/>
+<ol type="1">
+<li>자바</li>
+<li>오라클</li>
+<li>Jdbc</li>
+<li>HTML</li>
+<li>CSS</li>
+</ol>
+<hr/>
+
+일반글자<br/>
+<ul type="square">
+<li>강현모</li>
+<li>강산</li>
+<li>김진영</li>
+<li>황성준</li>
+</ul>
+
+<li>ol,ul의 자식이 아닌 li</li>
+<br/>
+<!-- inline방식 inline방식이 embed방식보다 우선-->
+오늘은 <span style="font-size: 10px; color:#FF0000">목요일</span> 입니다.
+
+</body>
+</html>

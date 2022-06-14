@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//이벤트 등록
+window.onload=function(){
+	//1. 이벤트를 등록하는 코드와
+	//click이벤트
+	document.getElementById("confirmBtn").addEventListener("click",useConfirm);
+	
+	//change이벤트
+	document.getElementById("url").addEventListener("change",useLocation);
+	
+}//onload
+
+
+//2. 이벤트를 처리하는 코드를 분리할 수 있다.
+function useConfirm(){
+	var value=confirm("글을 삭제하시겠습니까?");
+	if(value){
+		alert("글이 삭제되었습니다.");
+	}else{
+		alert("글이 삭제되지 않았습니다.");
+	}//end else
+}//useConfirm
+
+
+function useLocation(){
+	var sel=document.frm.url;
+	
+	//이동할 사이트를 선택하시겠습니다? 가 아니었을 때 아래의 코드를 실행
+//	if(sel.value=="none"){ //option의 value를 가지고 처리 
+	if(sel.selectedIndex==0){ //선택된 option의 index를 가지고 처리
+		return;
+	}//end if
+	
+	if(confirm(sel.value+"으로 이동하겠습니까?")){
+		//window.location.href="http://"+sel.value; //<a>태그와 같다. //히스토리가 남아서 뒤로가기 가능
+		location.replace("http://"+sel.value); //로딩된 URL을 치환하고 이동하므로 뒤로가기 불가 //히스토리가 남지 않는다.
+	}//end if
+	
+}//useLocation
+
+
+</script>
+</head>
+<body>
+<input type="button" value="confirm dialog" class="btn" id="confirmBtn"/><br/>
+<form name="frm">
+	<select id="url" name="url" class="inputBox">
+		<option value="none">---이동할 사이트를 선택-----</option>
+		<option value="google.com">구글</option>
+		<option value="daum.net">다음</option>
+		<option value="naver.com">네이버</option>
+		<option value="youtube.com">유튜브</option>
+	</select>
+</form>
+</body>
+</html>

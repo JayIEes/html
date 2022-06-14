@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$("#btnAttr").click(function(){
+		//$("#txt").attr("value","클릭되었습니다."); //attr 한 번 설정 후 변경되지 않음
+		//$("#txt").attr("class","inputBox");
+		$("#txt").prop("value","클릭되었습니다."); //prop 재설정됨.
+		$("#txt").prop("class","inputBox");
+	});//click
+	
+	
+	$("#btnM").click(function(){
+//		$("#m").attr("checked",true);
+		$("#m").prop("checked",true);
+	})
+	
+	$("#btnF").click(function(){
+//		$("#f").attr("checked",true);
+		$("#f").prop("checked",true);
+	})
+	
+	$("#ssn1").keyup(function(){
+		if($("#ssn1").val().length==6){
+			$("#ssn2").focus();
+		}
+	});
+	
+	
+	$("#ssn2").focusout(function(){
+		if($("#ssn2").val().length!=7){
+			alert("주민번호 뒷자리의 입력 값을 확인하세요.");
+			return;
+		}
+		/* else if(($("#ssn2").val()[0])%2==0){
+			$("#f").prop("checked",true);
+		}else{
+			
+			$("#m").prop("checked",true);
+		}
+		 */
+		 
+		 var genderFlag=$("#ssn2").val().charAt(0);
+		 var genderId = genderFlag%2==0?"#f":"#m";
+		 
+		$(genderId).prop("checked",true);
+	});
+	
+});//ready
+</script>
+</head>
+<body>
+<div>
+
+</div>
+<input type="button" value="속성추가" id="btnAttr" class="btn"/><br/>
+<input type="text" name="text" id="txt"/><br/>
+
+<input type="button" value="남자 설정" id="btnM" class="btn"/><br/>
+<input type="button" value="여자 설정" id="btnF" class="btn"/><br/>
+
+<label>주민번호</label>
+<input type="text" name="ssn1" id="ssn1" maxlength="6" style="width:60px" class="inputBox"/>-
+<input type="password" name="ssn2" id="ssn2" maxlength="7" style="width:70px" class="inputBox"/><br/>
+
+<label>성별 선택</label>
+<input type="radio" name="gender" id="m"/>남자
+<input type="radio" name="gender" id="f"/>여자
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>work1</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+input{width:100px; margin: 20px;}
+div{width:100px; height:100px;}
+</style>
+<script type="text/javascript">
+function age(){
+	let year="";
+	let input=prompt("태어난 해를 입력해주세요.", "태어난 해를 숫자로 입력하세요.");
+	year= input;
+	
+	console.log("당신의 나이는 "+ ((2022-year)+1)+"살 입니다." );
+}
+
+function gender(){
+	let gender="";
+	let inputGender=prompt("성별을 입력해주세요", "남자 면 '남' 여자는 '여'로 입력하세요.");
+	gender = (inputGender=="여"?"female":"male");
+	
+	document.write("<img src='images/"+gender+".png' />");
+}
+
+function divide(){
+	let rgb = prompt("RGB", "입력");
+	
+	document.write("<div style='width:100px; height:100px; background-color:"+rgb+ "'></div>");
+}
+
+</script>
+</head>
+<body>
+	<div><input type="button" value="나이" style="padding:5px;" onclick="age()" /></div>
+	<div><input type="button" value="성별" style="padding:5px;" onclick="gender()" /></div>
+	<div><input type="button" value="색" style="padding:5px;" onclick="divide()" /></div>
+</body>
+</html>

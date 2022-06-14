@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here.</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.130/html_prj/common/css/main_20220321.css">
+<style type="text/css">
+ table { margin: 0px auto; }
+ #div{color:#FF0000;margin: 0px auto; width:200px;}
+</style>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		idAndPass();
+	});//로그인 버튼 click
+	
+	
+	$("input").keyup(function(evt){
+		if(evt.which==13){
+			idAndPass();
+		}//end if
+	});//keyup
+	
+});//ready
+
+function idAndPass(){
+	if($("#id").val()==""){
+		$("#div").html("아이디 필수입력")
+	}else if($("#passwd").val()==""){
+		$("#div").html("비밀번호 필수입력");00
+		$("#passwd").focus();
+	}else{
+		window.location.href="http://daum.net";
+	}//end else
+}//
+
+
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td colspan="2" style="text-align: center;"><h1>로그인</h1></td>
+</tr>
+<tr>
+ <td><input type="text" name="id" id="id" class="inputBox"  placeholder="아이디"
+ 	tabindex="1" autofocus="autofocus"
+ style="width: 300px;height:40px;font-size: 24px; text-align: center;font-weight: bold;"/></td>
+ 
+ <td rowspan="2"><input type="button" id="btn" class="btn"  value="로그인" 
+ 	tabindex="3"
+ 	style="height: 86px; width: 100px;font-size: 22px; font-weight: bold;"/></td>
+</tr>
+<tr>
+ <td><input type="password" name="passwd" id="passwd" class="inputBox" placeholder="비밀번호" 
+ tabindex="2" 
+ style="width: 300px;height:40px;font-size: 24px; text-align: center;font-weight: bold;"/></td>
+</tr>
+</table>
+ <div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+[name='saveFlag']{font-size:20px; width:20px; height:40px;}
+</style>
+<script type="text/javascript">
+
+//선생님 코드*************************/////////////////////////////////
+
+ window.onload=function(){
+	document.getElementById("btn").addEventListener("click",setStatus);
+	setData();
+}//onload
+
+
+function setData(){
+	var name=localStorage.getItem("name");
+	if(name!= null){
+		var obj=document.frm;
+		obj.name.value=name;
+		obj.saveFlag.checked=localStorage.getItem("saveFlag");
+	}//end if
+}//setData 
+
+function setStatus(){
+	var obj=document.frm;
+	
+	if(!obj.saveFlag.checked){
+		localStorage.clear();
+		return;
+	}//end if
+	
+	localStorage.setItem("name",obj.name.value);
+	localStorage.setItem("saveFlag",obj.saveFlag.value);
+}
+
+</script>
+</head>
+<body>
+<form name="frm">
+<label>이름</label><input type="text" name="name" class="inputBox" id="name" />
+<input type="checkbox" name="saveFlag" id="save"/>저장<br/></form>
+<input type="button" value="입력" class="btn" id="btn" /><br/>
+</body>
+</html>

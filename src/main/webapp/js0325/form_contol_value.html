@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+div{border:1px solid #333; width:400px; height:300px; float:left;}
+</style>
+<script type="text/javascript">
+
+function useId(){
+	var name=document.getElementById("name").value;
+	var flag=document.getElementById("flag").value;
+	alert("이름 :"+name+", flag : "+flag);
+}//useId
+
+
+function useName(){
+	var obj=window.document.frm;
+	
+	//var name=window.document.frm.name.value;
+	//var flag=window.document.frm.flag.value;
+	var name=obj.name.value;
+	var flag=obj.flag.value;
+	alert("이름 :"+name+", flag : "+flag);
+}//useName
+
+
+</script>
+</head>
+<body>
+<div>
+	<strong>id를 사용한 값 얻기</strong><br/>
+<!-- <form> 태그가 없어도 접근하여 값을 얻을 수 있다. -->
+<label>이름</label><input type="text" id="name" class="inputBox"/><br/>
+<input type="checkbox" id="flag" value="저장"/>저장<br/>
+<input type="button" value="값 얻기" class="btn" onclick="useId()"/><br/>
+</div>
+<div>
+	<strong>name 속성을 사용한 값 얻기</strong>
+	
+	<form name="frm">
+		<fieldset>
+		<legend>입력폼</legend>
+		<label>이름</label><input type="text" name="name" class="inputBox"/><br/>
+		<input type="checkbox" name="flag" value="저장"/>저장<br/>
+		<input type="button" value="값 얻기" class="btn" onclick="useName()"/><br/>
+		</fieldset>
+	</form>
+	
+</div>
+
+</body>
+</html>

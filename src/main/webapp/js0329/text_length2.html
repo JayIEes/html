@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//선생님 코드
+
+var totalCnt=200;
+window.onload=function(){
+	document.getElementById("textInput").addEventListener("keyup",remaining);
+	document.getElementById("charRemaining").innerHTML=totalCnt+"자";
+}//onload
+
+
+function remaining(){
+	
+	var textElement=document.getElementById("textInput");
+	var leng=textElement.value.length;
+	
+	var output=(totalCnt-leng)+"자";
+	
+	
+	
+	if((totalCnt-leng)<=-1){
+		alert("더 이상 글을 입력할 수 없습니다.");
+		return;
+	}
+	
+	var divNode=document.getElementById("charRemaining");
+	divNode.innerHTML=output;
+	
+}//keyEvt
+
+
+</script>
+</head>
+<body>
+<div id="text1">
+	<textarea id="textInput" cols="30" style="width:200px; height:150px;" maxlength="200" ></textarea>
+	<div  id="charRemaining"style="border:1px solid #333; width:100px;
+			 height:30px; margin-top:10px; padding-left: 3px"></div>
+</div>
+</body>
+</html>

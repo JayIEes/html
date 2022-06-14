@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	
+	$("#idcheck").click(function(){
+		window.open("child.html","dubWin","width=300, height=200px");
+	});//click
+	
+	$("#pass2").blur(function(){
+		if($("#pass2").val()!=$("#pass").val()){
+			alert("비밀번호가 다릅니다.");
+			$("#pass2").val("");
+			$("#pass").val("");
+			$("#pass").focus();
+		}//end if
+	})//blur
+	
+	
+	$("#zip_code").click(function(){
+		window.open("../jquery0401/search_zipcode2.html","zip","width=500px, height=500px");
+	})//zip_code
+	
+	
+	$("#submit").click(function(){
+		//alert($("[name='gender']").is(":checked"))
+		var arr=["#id","아이디","#pass","비밀번호","#pass2"
+				,"비밀번호","#name","이름","#date","생일","#tel","휴대폰"
+				,"#email","이메일","#sel","이메일2","[name='gender']","성별"
+				,"#zipcode","우편번호","#addr2","주소"];
+	
+		for (var i = 0; i < arr.length; i+=2) {
+			console.log(arr[i]);
+			
+			if(arr[i]=="#sel"){
+				if($("#sel").val()=="선택해주세요"){
+					alert("이메일 주소를 선택해주세요.");
+					focus(arr[i]);
+					return;
+				}
+				
+			}//end if
+			
+			if(arr[i]=="[name='gender']"){
+				if($("[name='gender']").is(":checked") == false){
+					warn("성별");
+					return;
+				}
+			}//end if
+			
+			if($(arr[i]).val()==""){
+				warn(arr[i+1]);
+				focus(arr[i]);
+				return;
+			}else{
+				location.href="http://daum.net"
+			}
+		}//end for
+		
+	})//submit
+	
+	
+});//ready
+
+
+function warn(item){
+	alert(item+" 은(는) 필수 입력입니다.");
+}
+
+function focus(item){
+	$(item).focus();
+}
+
+</script>
+<style type="text/css">
+div { font-size:10px; }
+span{background-color: #F6F6F6;}
+</style>
+</head>
+<body>
+<center><h2><span>회원가입</span></h2></center>
+
+
+
+<form name="frm">
+<div>
+<table width="950" border="1" bordercolor="#D5D5D5"  cellspacing="0" cellpadding="10" align="center">
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 아이디</th>
+	<td><input type="text" id="id" name="id" readonly="readonly"/>&nbsp;&nbsp; 
+	<input type="button" value="ID중복확인" style="width:100px; font-size: 2px;" id="idcheck"/></td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 비밀번호</th>
+	<td><input type="password" name="pass" id="pass"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호 확인 &nbsp;&nbsp;&nbsp;
+	<input type="password" name="pass2"  id="pass2"/> 
+	&nbsp; *8~12의 영문,숫자,특수문자 3가지를 조합하여 입력</td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 이름</th>
+	<td><input type="text" id="name"/></td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 생일</th>
+	<td><input type="date" style="font-size:5px; height: 20px;" id="date"/></td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"> &nbsp;연락처</th>
+	<td><input type="text" style="width:135px;"/></td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 휴대폰</th>
+	<td><input type="text" style="width:135px;" id="tel"/>
+	&nbsp;&nbsp;&nbsp;
+	<input type="checkbox" name="recieve" value="recieve" /> 수신</td> 
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 이메일</th>
+	<td>
+	<input type="text" id="email"/> &nbsp;@ &nbsp;
+	<select name="names" style="width:180px; height: 22px; font-size: 3px;" id="sel" >
+		<option value="선택해주세요" selected="selected" >선택해주세요</option>
+		<option value="google" >google.com</option>
+		<option value="daum" >daum.net</option>
+		<option value="nate">nate.com</option>
+		<option value="naver" >naver.com</option>
+		<option value="hotmail" >hotmail.com</option>
+		<option value="직접입력" >직접입력</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;<input type="checkbox" name="recieve" value="recieve"/> 수신
+	</td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 성별</th>
+	<td><input type="radio" name="gender" value="남자"/> 남자 &nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="radio" name="gender" value="여자"/> 여자
+</tr>
+<tr height="50">
+	<th width="100" align="left"> &nbsp;소재지</th>
+	<td>
+	<select name="names" style="width:110px; height: 22px; font-size: 3px;" >
+	<option value="선택해주세요" selected="selected" >선택해주세요</option>
+	<option value="서울" >서울</option>
+	<option value="경기" >경기</option>
+	<option value="강원" >강원</option>
+	<option value="충청도" >충청도</option>
+	<option value="경상도" >경상도</option>
+	<option value="전라도" >전라도</option>
+	<option value="제주도" >제주도</option>
+	</select>
+	</td>
+</tr>
+<tr height="50">
+	<th width="100" align="left"><font color="red">*</font> 우편번호</th>
+	<td><input type="text"style="width:130px;"name="zipcode" id="zipcode"/>&nbsp;
+	<input type="button" value="우편번호검색" style="width:100px; font-size: 2px;" id="zip_code"/></td>
+</tr>
+<tr height="80">
+	<th align="left" rowspan="2"><font color="red">*</font> 주소</th>
+	<td><input type="text" style="width:350px; margin-bottom:5px;" name="addr1" id="addr1"/><br/>
+	<input type="text" style="width:350px;" id="addr2" /></td>
+</tr>
+</table>
+
+<br/>
+<center>
+<input type="button" value="확인"
+style="background-color:#001054; border-color:#001054; width:150px; height:40px; color:white;
+ font-size: 2px;" id="submit" />&nbsp;&nbsp;
+ 
+<input type="reset" value="취소" style="background-color:#BDBDBD; border-color:#BDBDBD; 
+width:150px; height:40px; color:white; font-size: 2px;" >
+</center>
+</div>
+</form>
+
+</body>
+</html>

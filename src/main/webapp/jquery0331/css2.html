@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+.text{font-weight: bold; font-size: 20px; color:#B2C7D9;}
+.newInput{font-weight: bold; font-size: 20px;}
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		$(".text").removeClass("text");
+	});//click
+});//ready
+
+$(function(){
+	$("#btn1").click(function(){
+		//$("#id").removeClass("newInput"); //기존의 클래스클래스를 삭제하고
+		//$("#id").addClass("newInput"); //기존의 클래스에 새로운 클래스 추가
+		$("#id").removeClass("newInput").addClass("newInput"); //function 체인
+	});//click
+});//ready
+
+</script>
+</head>
+<body>
+<input type="button" value="클래스제거" class="btn" id="btn"/>
+<input type="button" value="클래스추가" class="btn" id="btn1"/>
+<ul>
+	<li class="text">봄에는 벚꽃</li>
+	<li>여름에는 별</li>
+	<li class="text">가을에는 달</li>
+	<li>겨울에는 눈</li>
+</ul>
+<label>아이디</label><input type="text" id="id" name="id" class="inputBox"/>
+</body>
+</html>

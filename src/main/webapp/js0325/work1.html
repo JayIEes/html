@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+input{margin: 10px; padding-left: 10px;}
+div{font-size: 15px;width:500px; height:200px; margin:10px; margin-left:20px;}
+#textOutput{font-size: 12px;width:400px; height:300px; border:1px solid #333;}
+#inputBtn{width:80px; padding:5px; }
+</style>
+<script type="text/javascript">
+
+
+function validation() {
+	 obj=document.frm;
+	
+	 name=obj.name.value; //이름 값
+	 iden1=obj.iden1.value; // 주민번호 앞자리 값
+	 iden2=obj.iden2.value; //주민번호 뒤자리 값
+	
+	
+	//유효성 검증 1.
+	if(name==""){
+		alert("이름 필수입력")
+		obj.name.focus();
+		return;
+	}else if(iden1==""){
+		alert("주민번호 필수입력")
+		obj.iden1.focus();
+		return;
+	}else if(iden2==""){
+		alert("주민번호 필수입력")
+		obj.iden2.focus();
+		return;
+	}//end else if
+	
+	
+	//유효성 검증 2. 
+	var regisNum=(iden1+iden2);
+	
+	if(regisNum.length!=13){
+		alert("올바른 주민번호 형식이 아닙니다."); // 주민번호가 13자리가 아닐때.
+		obj.iden1.focus();
+		return;
+	}//end if
+	
+	
+	//유효성 검증 3. 
+	//1)
+	var total=0;	
+ //유효성검증은 연산되는 값을 배열로 만들어서 저장한 후 한번에 반복해서 연산하는 코드로 변경해보세요
+ /////////////////////////////////////////////////////////////////////////////////////
+ //check sum 코드 
+ var checkSumCode=[2,3,4,5,6,7,8,9,2,3,4,5];
+	for (var i = 0; i < checkSumCode.length; i++) {
+		total+=checkSumCode[i]*regisNum.charAt(i);
+	}
+///////////////////////////////////////////////////////////////////////////////////// 
+	/* var i=0;
+	var j=2;
+	while(i<8 && j<10){
+		total+=regisNum.charAt(i)*j;
+		i++;
+		j++;
+	}//end while
+	
+	i=8;
+	j=2;
+	while(i<12 && j<6){
+		total+=regisNum.charAt(i)*j;
+		i++;
+		j++;
+	}//end while */
+	
+	//계산
+	var validTest=(11-(total%11))%10;
+	
+	if(validTest!=regisNum.charAt(12)){
+		alert("유효하지 않는 주민번호입니다.");
+		return;
+	}//else if
+	
+	
+	//출력
+	var year=parseInt((iden1.substring(0, 2)));
+	var nationality="";
+	var gender="";
+	var month=parseInt((iden1.substring(2,4)))+"월"; //01월 02월 등 앞 0제거 위해
+	var date=parseInt((iden1.substring(4,6)))+"일"; 
+	var thee="";
+	
+	var firstNum=iden2.charAt(0);
+	if(firstNum%2==0){//성별
+		gender="여자";
+	}else{
+		gender="남자";
+	}//end else
+
+		
+	//생년,국적, 성별 
+	switch(parseInt(firstNum)){
+	case 1 :
+	case 2 : year+=1900; nationality="내국인"; break;
+	case 3 :
+	case 4 : year+=2000; nationality="내국인"; break;
+	case 5 :
+	case 6 : year+=1900; nationality="외국인"; break;
+	case 7 :
+	case 8 : year+=2000; nationality="외국인"; break;
+	case 9 : 
+	case 0 : year+=1800; nationality="내국인"; break;
+	}
+	
+	//띠
+	var arr=["원숭이","닭","개","돼지","쥐","소","호랑이","토끼","용","뱀","말","양"];
+	var i= year%12
+	thee=arr[i];
+
+	//
+	var data=
+		name+" 님</br>주민번호 "+iden1+"-"+iden2+"<br/><br/>주민번호 유효성 검증 결과 : 유효<br/><br/>";
+	
+	data+="태어난 해 : "+ year+"<br/>생년월일 : "+month+" "+date+"<br/>성별 : "+gender+"<br/>"+"띠 : "+thee+
+				"띠<br/>국적 : "+nationality;
+
+	
+	var divNode=document.getElementById("textOutput")
+	divNode.innerHTML=data;
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+<div>
+	<div>
+	<form name="frm">
+		<label style="padding-right:25px;">이름</label>
+		<input type="text" name="name" class="inputBox"/><br/>
+		<label>주민번호</label><input type="text" name="iden1" maxlength="6" class="inputBox"/>-
+		<input type="password" name="iden2" class="inputBox" maxlength="7"/><br/>
+		<input type="button" value="입력" id="inputBtn" onclick="validation()"/>
+	</form>
+	</div>
+	
+	<div id="textOutput"></div>
+	
+</div>
+</body>
+</html>

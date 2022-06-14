@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>usemap 태그의 사용</title>
+</head>
+<body>
+
+<a href="https://www.gangnam.go.kr/main.do">
+<img src="images/seoul_map.PNG" border="0"/></a>
+<hr color="#FF0000"/>
+
+<!-- target="_new" 새탭을 의미 -->
+<map name="seoul_map" id="seoul_map">
+<area shape="rect" coords="463,381,530,430" href="https://www.gangnam.go.kr/main.do" alt="깅남구" target="_new" title="강남구청"/>
+<area shape="rect" coords="276,148,316,207" href="https://www.ep.go.kr/www/index.do" alt="은평구" target="_new" title="은평구청"/>
+<area shape="rect" coords="305,365,355,392" href="https://www.dongjak.go.kr/portal/main/main.do" alt="동작구" target="_new" title="동작구청"/>
+
+<area shape="circle" coords="325,435,20" title="관악구청" href="https://www.gwanak.go.kr/" alt="관악구" target="_new" />
+<area shape="circle" coords="276,283,25" title="마포구청" href="https://www.mapo.go.kr/html/corona/intro.htm" alt="마포구" target="_new" />
+</map>
+
+<!-- map과 img태그는 같은 근처에 있지 않아도 상관없다. -->
+<img usemap="#seoul_map"src="http://localhost/html_prj/day0315/images/seoul_map.PNG" border="0"/>
+
+</body>
+</html>

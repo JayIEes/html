@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통디자인-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+input{margin:5px}
+div{border:1px solid #333; width:300px; height:150px; padding-top:50px; text-align: center;}
+img{ width:80px; height:80px;}
+#dice2{padding-left: 60px;}
+</style>
+<script type="text/javascript">
+
+arr=["images/dice1.png"];
+
+function dice(){
+	var obj=document.frm;
+	
+	var cnt=0;
+	var ran=parseInt((Math.random()*6)+1);
+	cnt+=ran;
+	obj.img1.src="images/dice"+ran+".png";
+	
+	ran=parseInt((Math.random()*6)+1);
+	cnt+=ran;
+	obj.img2.src="images/dice"+ran+".png";
+	
+	obj.result.value=cnt;
+}//dice
+	
+
+function ranImg(){
+	var obj=document.frm;
+	
+	var ran=parseInt((Math.random()*6)+1)
+	obj.img1.src="images/dice"+ran+".png";
+	
+	ran=parseInt((Math.random()*6)+1)
+	obj.img2.src="images/dice"+ran+".png";
+}
+
+</script>
+</head>
+<body onload="ranImg()">
+<form name="frm">
+<input type="button" value="던지기" name="throw" class="btn" onclick="dice()"/>
+<div>
+	<img src="" name="img1" >
+	<img id="dice2" src="" name="img2">
+</div>
+결과 <input type="text" name="result" class="inputbox" readonly="readonly"/>
+</form>
+
+</body>
+</html>

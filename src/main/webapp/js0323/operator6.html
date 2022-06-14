@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+var input=prompt("나이를 입력해주세요.","0");
+//alert(input);
+document.write("입력값: "+typeof(input)+"</br>");
+
+//입력값이 19세 이상이면 어른 이미지 
+//그렇지 않으면 어른 이미지 
+let img="";
+img = (input>=19)? "adult" : "child";
+document.write("<img src='images/"+img+".png'/></br>");
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

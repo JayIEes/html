@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+input{margin-bottom: 20px}
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+var cnt=0;
+$(function(){
+	
+	$("#in").focusin(function(){
+		cnt++
+		$("#output").html("<strong>"+cnt+"커서가 들어옴</strong>");
+	});
+	
+	
+	$("#out").focusout(function(){
+		$("#output").html("<strong> focusout커서가 나감</strong>");
+	});
+	
+	
+	$("#out2").blur(function(){
+		$("#output").html("<strong> blur커서가 나감</strong>");
+	});
+	
+	
+	$("#mOver").mouseover(function(){
+		$("#img").hide();
+	});
+	
+	
+	$("#mOut").mouseout(function(){
+		$("#img").show();
+	});
+	
+	
+	$("#hover").hover(
+	function(){//마우스 포인터가 들어갔을 때 코드
+		$("#output").html("포인터 들어옴");
+	},
+	function(){//마우스 포인터가 나갔을 때 코드
+		$("#output").html("포인터 나감");
+	});//hover
+	
+	
+	$("#move").mousemove(function(event){//evt매개변수:이벤트가 발생했을 때 JQuery에서 할당하는 마우스 이벤트 객체
+		$("#output").html("마우스가 움직였음. 포인터x좌표"+event.pageX+"y좌표: "+event.pageY);
+	});//mousemove
+	
+	
+	$("#kd").keydown(function(evt){//evt매개변수:이벤트가 발생했을 때 JQuery에서 할당하는 키보트 이벤트 객체
+		$("#output").html("키가 눌렸음"+evt.which+" / "+$("#kd").val());
+	});//keydown
+	
+	$("#ku").keyup(function(evt){
+		$("#output").html("키가 올라옴"+evt.which+" / "+$("#ku").val());
+	});//keydown
+});//ready
+</script>
+</head>
+<body>
+<img src="../common/images/sist_logo.png" id="img"/><br/>
+<label>커서가 들어왔을 때</label><input type="text" id="in" class="inputBox"/><br/>
+<label>커서가 나갔을 때</label><input type="text" id="out" class="inputBox"/><br/>
+<div id="output"></div>
+
+<label>마우스 포인터가 올라올 때</label>
+<input type="button" id="mOver" class="btn" value="포인터 올림"/><br/>
+<label>마우스 포인터가 나갔을 때</label>
+<input type="button" id="mOut" class="btn" value="포인터 나감"/><br/>
+<input type="button" id="hover" class="btn" value="포인터 들어올 때 나갈 때"/><br/>
+<img src="../js0324/images/blood_a.PNG" id="move"/><br/>
+
+<label>키가 눌렸을 때</label><input type="text" id="kd" class="inputBox"/><br/>
+<label>키가 올라올 때</label><input type="text" id="ku" class="inputBox"/><br/>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+window.onload=function(){
+	document.getElementById("btn").addEventListener("click",setData)
+}//onload
+
+function setData(){
+	//1.JSONArray를 데이터로 가진 JSONObject
+	var jsonObject={prdName:"서희수",prdDate:"2022-03-30",subject:"두번째 프로젝트를 진행하기 위한 회의참석자 정보",
+					data:[
+						{name:"정인선",email:"jung@test.com",tel:"010-1234-5678"},
+						{name:"전밎전",email:"jeon@sist.co.kr",tel:"010-5689-1254"},
+						{name:"장전누",email:"jung@google.com",tel:"010-8768-5412"},
+						{name:"권용얼",email:"kwon@naver.com",tel:"010-1424-5646"}
+						]
+					};
+	
+	//2. parsing하여 값 설정
+	var obj=document.frm;
+	
+	obj.prdName.value=jsonObject.prdName;
+	obj.prdDate.value=jsonObject.prdDate;
+	obj.subject.value=jsonObject.subject;
+	
+	var jsonArr=jsonObject.data;
+	
+	var output="";
+	for (var i = 0; i < jsonArr.length; i++) {
+		output+=jsonArr[i].name+"\t"+jsonArr[i].email+"\t"+jsonArr[i].tel+"\n";
+	}//end for
+	
+	obj.data.value=output;
+	
+	
+}//setData
+
+
+</script>
+</head>
+<body>
+<input type="button" value="값 얻기" class="btn" id="btn"/>
+<form name="frm">
+<label>제작자</label>
+<input type="text" name="prdName" class="inputBox"/><br/>
+<label>생성일</label>
+<input type="date" name="prdDate" class="inputBox"/><br/>
+<label>제목</label>
+<input type="text" name="subject" class="inputBox"/><br/>
+<label>데이터</label>
+<textarea class="inputBox" style="width:500px; height:200px;" name="data"></textarea><br/>
+</form>
+</body>
+</html>

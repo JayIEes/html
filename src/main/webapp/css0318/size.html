@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>size</title>
+<style type="text/css">
+div{border:1px solid #dfdfdf; height:300px; width:500px;}
+
+table{border-spacing: 10px;}
+table, th, td{border:1px solid #000000}
+
+#num{width:80px }
+#name{width:150px }
+#age{width:120px }
+
+.height{height:30px }
+
+label{font-size: 30px; font-weight: bold}
+input{width:300px; height:40px; border: 1px solid #dfdfdf; font-size: 30px;}
+
+</style>
+</head>
+<body>
+<div></div>
+
+<table>
+<tr class="height">
+	<th id="num">번호</th><th id="name">이름</th><th id="age">나이</th> <!-- html width는 정밀도 떨어짐 -->
+</tr>
+<tr class="height">
+	<td>1</td><td>황성준</td><td>26</td>
+</tr>
+<tr  class="height">
+	<td>2</td><td>권용현</td><td>25</td>
+</tr>
+<tr class="height">
+	<td>3</td><td>김진영</td><td>21</td>
+</tr>
+</table>
+<hr/>
+<label>이름</label> <input type="text" name="name"/><br/>
+<label>나이</label> <input type="text" name="age"/><br/>
+
+</body>
+</html>

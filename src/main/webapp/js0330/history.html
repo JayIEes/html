@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	document.getElementById("cnt").addEventListener("click",hisCnt)
+	document.getElementById("back").addEventListener("click",hisBack)
+	document.getElementById("go").addEventListener("click",hisGo)
+	document.getElementById("go1").addEventListener("click",hisGo1)
+	document.getElementById("go2").addEventListener("click",hisGo2)
+}//onload
+
+function hisCnt(){
+	alert("브라우저의 히스토리 개수 "+history.length);
+}//hisCnt
+
+function hisBack(){
+	history.back();
+}//hisBack
+
+function hisGo(){
+	history.go(1);
+}//hisGo
+
+function hisGo1(){
+	history.go(-2);
+}//hisGo
+
+function hisGo2(){
+	history.go(2);
+}//hisGo
+
+</script>
+</head>
+<body>
+<input type="button" value="history수" class="btn" id="cnt"/>
+<input type="button" value="뒤로" class="btn" id="back"/>
+<input type="button" value="앞으로" class="btn" id="go"/>
+<input type="button" value="2뒤로" class="btn" id="go1"/>
+<input type="button" value="2앞으로" class="btn" id="go2"/>
+</body>
+</html>

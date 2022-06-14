@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<style type="text/css">
+div{border: 1px solid #333; width:600px; height:300px; text-align: center;}
+
+td{border: 1px solid #333; width:120px; height:100px}
+.tdLeft{text-align: left}
+.tdCenter{text-align: center;}
+.tdRight{text-align: right;}
+
+.tdTop{vertical-align: top;}
+.tdMiddle{vertical-align: middle;}
+.tdBottom{vertical-align: bottom;}
+
+</style>
+</head>
+<body>
+<div>안녕하세요<!-- 데이터의 크기가 높이가 된다. height을 설정하더라고 높이는 글자크기로 설정됨. vertical align이 작동하지 않는다.-->
+</div>
+<div>
+<!--td는 글자의 높이로 높이가 설정되는것이 아니므로 vertical-align이 설정된다. -->
+<table>
+<tr>
+	<td class="tdLeft">안녕하세요?</td>
+	<td class="tdCenter">안녕하세요?</td>
+	<td class="tdRight">안녕하세요?</td>
+</tr>
+<tr>
+	<td class="tdTop">안녕하세요?</td>
+	<td class="tdMiddel">안녕하세요?</td>
+	<td class="tdBottom">안녕하세요?</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

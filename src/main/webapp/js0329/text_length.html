@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+cnt=0;
+
+window.onload=function(){
+	document.getElementById("textArea").addEventListener("keyup",keyEvt);
+	//document.getElementById("textArea").addEventListener("keydown",keyEvt);
+	
+}//onload
+
+
+function keyEvt(evt){
+	
+	var textElement=document.getElementById("textArea");
+	//alert(textElement.value[0]);
+	
+	var output="";
+	var divElement=document.getElementById("output");
+
+	cnt=textElement.value.length;
+	
+	if(textElement.value.length>200){
+		alert("200자가 초과되었습니다.");
+	}
+	
+	if(cnt>200){
+		cnt=200;
+	}
+		
+	var output=200-cnt+"자/200자";
+	
+	var divNode=document.getElementById("output");
+	divNode.innerHTML=output;
+	
+}//keyEvt
+
+
+</script>
+</head>
+<body>
+	<textarea id="textArea" cols="30" style="width:200px; height:150px;" ></textarea>
+	<div  id="output"style="border:1px solid #333; width:100px;
+			 height:30px; margin-top:10px; padding-left: 3px"></div>
+</body>
+</html>

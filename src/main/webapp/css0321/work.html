@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+table{border-collapse:collapse; margin-top: 30px; margin: 0px auto;}
+div{margin: 0px auto; width:700px; height:400px; }
+td{font-size: 13px; height:40px; padding-top:6px;}
+input{padding-left: 12px; font-weight: bold; }
+
+a:hover{font-weight: bold; color:#5D5D5D}
+input::placeholder{color:#D5D5D5; }
+
+.td{width:250px; border-bottom:2px solid #333; font-weight: bold; }
+
+#btn1{width:288px; height:45px; padding-left: 0px;  background-color:#353535; color:#FFFFFF;font-weight: bold; 
+	border:0.1px solid #353535; cursor: pointer;}
+#btn2{width:288px; height:45px; padding-left: 0px; background:linear-gradient(#ffffff,#F6F6F6); 
+		color:#4C4C4C;font-weight: bold; border:0.1px solid #BDBDBD; cursor: pointer;}
+</style>
+</head>
+<body>
+<div>
+<h1 style="margin-top: 50px; margin-bottom: 50px; text-align: center;">로그인</h1>
+<table >
+<tr>
+	<td class="td">회원로그인</td>
+	<td rowspan="5" style="width:45px;"></td>
+	<td class="td">비회원 주문조회</td>
+</tr>
+<tr>
+	<td><input type="text" name="id" placeholder="아이디" class="inputBox" size="35"/></td>
+	<td><input type="text" name="buyer" placeholder="주문자명" class="inputBox" size="35" /></td>
+</tr>
+<tr>
+	<td><input type="password" name="pass" placeholder="비밀번호" class="inputBox" size="35"/></td>
+	<td><input type="text" name="tel" placeholder="하이픈(-)포함" class="inputBox" size="17"/></td>
+</tr>
+<tr>
+	<td><input type="button" value="로그인" width="100" id="btn1"/></td>
+	<td><input type="password" name="tel" placeholder="비회원주문 비밀번호" class="inputBox" size="35"/></td>
+</tr>
+<tr>
+	<td ></td>
+	<td><input type="button" value="비회원 주문 조회하기" width="100" id="btn2"/></td>
+</tr>
+<tr>
+	<td colspan="3"></td>
+</tr>
+<tr>
+	<td colspan="3" style="padding-left: 10px; font-size: 8px; font-weight: bold">
+	<a href="http://localhost/html_prj/css0321/member_form.html" target="_new">회원가입</a>&nbsp;&nbsp;&nbsp; 
+	<font color="#BDBDBD" style="font-weight: normal">|</font>
+	&nbsp;&nbsp;&nbsp;아이디 찾기&nbsp;&nbsp;&nbsp; <font color="#BDBDBD" style="font-weight: normal">|</font>
+	&nbsp;&nbsp;&nbsp; 비밀번호 찾기</td>
+</tr>
+
+</table>
+
+</div>
+</body>
+</html>

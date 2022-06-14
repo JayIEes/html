@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+input{margin-top: 10px}
+</style>
+<script type="text/javascript">
+//기명 함수
+function test(){
+	alert("기명함수");
+}//test
+
+//무기명함수
+var test2=function(){
+	alert("무기명함수")
+}//test3s
+
+//호출(JavaScript영역에서만 호출 가능)
+/* test();
+test2(); */
+
+</script>
+</head>
+<!-- <body onload="test()"> -->
+<!-- <body onload="var a='테스트'; for(var i=0;i<10;i++){alert(a);}"> -->
+<body>
+<!-- 사용자의 동작에 의한 함수 호출 -->
+<!-- <div onload="test()">div</div> onload속성은 body태그 에서만 동작한다. -->
+<input type="button" value="클릭" class="btn" onclick="test()"/></br>
+<!-- <a href="test()">클릭</a></br> --> <!--href= 속성은 html 영역이므로 자바스크립 코드를 정의할 수 없다. -->
+<a href="#void" onclick="test()">클릭</a></br> 
+<a href="javascript:test()">영역변경</a></br> 
+<img src="images/blood_a.PNG" onmouseover="test()" style="border:1px solid #333"/>
+<img src="images/blood_b.PNG" onmouseout="test()" style="border:1px solid #333"/></br>
+
+<input type="text" onkeydown="test()" placeholder="키가 눌릴때" class="inputBox"/></br>
+<!-- <input type="text" onkeypress="test()" placeholder="키가 눌릴 때" class="inputBox"/></br> -->
+<input type="text" onkeyup="test()" placeholder="키가 올라올 때" class="inputBox"/></br>
+<input type="text" onblur="test()" placeholder="커서가 빠져나갔을 때" class="inputBox"/></br>
+
+<label>change</label>
+<!-- select은 option이 하나인 경우 onchange가 될 수 없다. -->
+<select onchange="test()">
+	<option>값1</option>
+	<option>값2</option>
+	<option>값3</option>
+</select>
+</br>
+<input type="text" onchange="test()" placeholder="커서가 들어왓을 때의 값과 빠져나갔을 때의 값이 다른면 "
+		 class="inputBox"/></br>
+		 
+		 
+<input type="button" ondblclick="test()" value="더블클릭" class="btn"/></br>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//입력받은 혈액형을 비교하여 혈액형별 특징이미지 출력
+let bloodType=prompt("혈액형을 입력해주세요\n A B AB O","A");
+let img="";
+let tooltip="";
+
+
+switch (bloodType) {
+case "A": img="blood_a.PNG"; tooltip="타인배려"; break;
+case "B": img="blood_b.PNG"; tooltip="아니오라고 할 수 있는 능력"; break;
+case "AB": img="blood_ab.PNG"; tooltip="감정절제"; break;
+case "O": img="blood_o.PNG"; tooltip="개그 본능"; break;
+default: img="default.PNG"; tooltip="사람의 혈액형이 아닙니다.";
+}
+document.write("<img src='images/"+img+"'title='"+tooltip+"'/>")
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>목록 태그</title>
+</head>
+<body>
+<strong>순서 목록</strong><br/>
+<ol type="1"> <!-- type 속성을 생략하면 1~n, type="1,A,a,i,I" -->
+	<li>Java SE</li>
+	<li>Oracle DBMS</li>
+	<li value="100">JDBC</li> <!-- value를 넣으면 그 번호부터 다시 시작 -->
+	<li>HTML</li>
+	<li>CSS</li>
+</ol>
+
+<hr/>
+<strong>도형 목록</strong><br/>
+<ul type="none"><!-- type 속성을 생략하면 disc가 기본 속성, type="disc, circle, square" -->
+	<li>사과</li>
+	<li>ss배</li>
+	<li>감</li>
+	<li>복숭아</li>
+	<li>귤</li>
+</ul>
+
+<!-- li는 ul이나 ol에 포함되어 사용되어야 한다. -->
+<li>ul이나 ol에 포함되지 않은 목록</li>
+<li>ul이나 ol에 포함되지 않은 목록</li>
+
+<hr/>
+<strong>설명 목록</strong>
+<dl>
+	<dt>Java</dt>
+	<dd>완벽한 객체지향언어. WORA</dd> 
+	<dt>Oracle DBMS</dt>
+	<dd>대용량 데이터를 사용할 때 효율이 좋은 DBMS</dd> 
+	<dt>JDBC</dt>
+	<dd>Java에서 DBMS와 연동하기 위해 지원되는 기술. </dd> 
+</dl>
+
+
+</body>
+</html>

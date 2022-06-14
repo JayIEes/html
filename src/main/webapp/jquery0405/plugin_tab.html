@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- 제공 JS와 css연결 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script type="text/javascript">
+$( function() {
+    $( "#tabs" ).tabs({
+      event: "mouseover"
+    });
+  } );
+</script>
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">1조</a></li>
+    <li><a href="#tabs-2">2조</a></li>
+    <li><a href="#tabs-3">3조</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>1조	박설진	강현모	서지숙	최연이	강명준</p>
+    <p>크몽 벤치아킹 프로젝트</p>
+    <p>자바개발자~</p>
+   </div>
+  <div id="tabs-2">
+    <p>2조	김예진	권용현	서희수	신유철	정인선</p>
+    <p>돈으로 지불 시대 지나가갔다 물물교환</p>
+  </div>
+  <div id="tabs-3">
+    <p>3조	김예진	권용현	서희수	신유철	정인선</p>
+    <p>미술관</p>
+    </div>
+</div>
+ 
+</body>
+</html>

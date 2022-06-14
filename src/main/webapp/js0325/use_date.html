@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+span{font-size: 20px; font-weight: bold; color:#7B93AE;}
+</style>
+<script type="text/javascript">
+
+var cnt=0;
+function getDate(){
+	
+	//날짜 객체 생성
+	var date=new Date();
+	console.log(typeof(date));
+	
+	var weekTitle=["일","월","화","수","목","금","토"];
+	
+	//var output=date.getYear()+1900;
+	var output=date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "
+			+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+" "
+			+weekTitle[date.getDay()];
+	
+	var spanNode=document.getElementById("output");
+	spanNode.innerHTML=output;
+	
+	//setTimeout(getDate, 1000);//호출할 함수명만 넣어주어야 한다. 괄호X
+	
+	//시간을 5초동안만 흘러가게 만들기
+	if(cnt<5){
+	setTimeout(getDate, 1000);
+	cnt++
+	}
+}//getDate
+
+</script>
+</head>
+<body>
+	<input type="button" value="날짜얻기" class="btn" onclick="getDate()"/>
+	현재 날짜정보는<span id="output"></span>입니다.
+</body>
+</html>

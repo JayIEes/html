@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+function typeA(){
+	alert('고정일');
+}//typeA
+
+
+function typeB(name){
+	alert('가변일 : 매개변수 값 '+name);
+}//typeB
+
+
+function typeC(){
+	
+	return '고정값';
+}//typeC
+
+
+function typeD(name){
+	
+	return'가변값 : 매개변수 값 '+name;
+}//typeD
+
+
+
+function callTypeA(){
+	typeA();
+}//callTypeA
+
+
+function callTypeB(){
+	let name="김철수"
+	typeB(name);
+}//callTypeB
+
+
+function callTypeC(){
+	let msg=typeC(); //return되는 값을 받는다.
+	alert(msg);
+}//callTypeC
+
+function callTypeD(){
+	let msg=typeD("김철수다"); //return되는 값을 받는다.
+	alert(msg);
+}//callTypeC
+
+//초기값을 정의한 매개변수
+function typeE(name="익명", age=0){
+	console.log("name : "+name+", age : "+age)
+}//typeE
+
+function callTypeE(){
+	typeE("권상우",25);
+	typeE();
+}
+
+
+</script>
+</head>
+<body>
+<input type="button" value="고정일" class="btn" onclick="callTypeA()" />
+<input type="button" value="가변일" class="btn" onclick="callTypeB()" />
+<input type="button" value="고정값" class="btn" onclick="callTypeC()"/>
+<input type="button" value="가변값" class="btn" onclick="callTypeD()"/>
+<input type="button" value="매개변수의 초기값" class="btn" onclick="callTypeE()"/>
+</body>
+</html>

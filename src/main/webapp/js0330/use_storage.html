@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+[name='saveFlag']{font-size:20px; width:20px; height:40px;}
+</style>
+<script type="text/javascript">
+/* var jsonObj={msg:"hell",age:20};
+alert(jsonObj.msg+" / "+jsonObj.age);
+ */
+ //alert(localStorage.length);
+
+ window.onload=function(){
+	// alert(localStorage.length);
+	//alert(document.frm.saveFlag.checked);
+	if(localStorage.length==0){
+		localStorage.setItem("name","");
+		localStorage.setItem("status","");s
+		//document.frm.saveFlag.checked=false;
+	}else{
+		document.frm.name.value=localStorage.getItem("name");
+		document.frm.saveFlag.checked=localStorage.getItem("status");
+	}
+	 
+	document.getElementById("btn").addEventListener("click",saveName);
+}//onload
+
+function saveName(){
+	var obj=document.frm;
+
+	if(obj.saveFlag.checked){
+		localStorage.setItem("name",obj.name.value);
+		localStorage.setItem("status",obj.saveFlag.checked);
+	}else{
+		localStorage.clear();
+	}
+	
+}//saveName 
+
+</script>
+</head>
+<body>
+<form name="frm">
+<label>이름</label><input type="text" name="name" class="inputBox" id="name" />
+<input type="checkbox" name="saveFlag" id="save"/>저장<br/></form>
+<input type="button" value="입력" class="btn" id="btn" /><br/>
+</body>
+</html>

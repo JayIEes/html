@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+
+var arrName=new Array();
+//arrName[0]="이름";
+	
+function namein(){
+	var name=prompt("이름을 입력해주세요.");
+	//arrName.push(name);
+	arrName[arrName.length]=name;
+}
+
+
+function print(){
+	document.write("<table border='1' cellspacing='0'><tr>");
+	for (var i = 0; i < arrName.length; i++) {
+	document.write("<td style='width:100px; height:30px; text-align: center;'>"+arrName[i]+"</td>");
+	}//end for
+	document.write("</tr></table>");
+}//print
+
+</script>
+</head>
+<body>
+<input type="button" value="이름입력" class="btn" onclick="namein()"/>
+<input type="button" value="이름출력" class="btn" onclick="print()"/>
+
+</body>
+</html>

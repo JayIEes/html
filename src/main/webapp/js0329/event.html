@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 디자인-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+	/* var btn=document.getElementById("anonymous"); //위에서 아래로 흐르기 때문에 body를 모른채로 null이 나온다.
+	alert(btn); */
+
+	//onload이벤트가 발생했을 때 버튼에 이벤트를 등록하여 처리 anonymous function방식으로
+	window.onload=function(){
+	
+//function testEvt(){
+	//var btn=document.getElementById("anonymous"); 
+	//alert(btn);
+	
+	//무기명 함수로 이벤트를 등록하고 처리 : 이벤트가 발생하면 무기명 함수가 호출된다.
+	document.getElementById("anonymous").onclick=function(){
+		var obj=document.frm;
+		var textVal=obj.text.value;
+		alert(textVal);
+		}//onclick
+	
+	//addEventListener 함수 사용
+	//함수명을 넣을 때에는 addEventListener 함수 안에서 입력된 함수를 호출할 수 있도록
+	//매개변수에 함수명만 전달해준다. (first class function) - 함수기호()를 사용하지 않는다.
+	document.getElementById("named").addEventListener("click",getTextValue);
+		
+} //window.onload
+
+
+function getTextValue(){
+	var obj=document.frm1;
+	alert("입력값 "+obj.text.value);
+}//getTextValue
+
+</script>
+</head>
+<!-- <body onload="testEvt()"> --> <!-- body 로딩 후 불림 -->
+<body>
+<!-- 구조 -->
+<form name="frm">
+<label>텍스트</label><input type="text" name="text" class="inputBox" /><br/>
+<input type="button" value="무기명 함수 사용" class="btn" id="anonymous" />
+</form>
+<form name="frm1"> <!-- form이 두개 이상이면 배열 처리 -->
+<label>텍스트</label><input type="text" name="text" class="inputBox" /><br/>
+<input type="button" value="기명함수 사용" class="btn" id="named" />
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><!--내꺼 아님 -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{width:100px; height:100px;}
+	#blue{background-color:blue; border-radius:50px;}
+	#red{background-color:red; border-radius:50px;}
+</style>
+<script type="text/javascript">
+	birthYear=parseInt(prompt("태어난 년도를 입력하세요.",0))-1;
+	console.log("나이 : "+(2022-birthYear));
+	
+	gender=prompt("성별을 입력하세요.\n 남자:m, 여자:y","m");
+	console.log("성별 : "+gender);
+	color=(gender=="m")?"blue":"red";
+	document.write("<div id='"+color+"'></div>");
+
+	rgb=prompt("RGB코드를 입력해주세요. ex)#FFFF00","#000000");
+	document.write("<br /><div style='background-color : "+rgb+"'></div>");	
+</script>
+</head>
+<body>
+</body>
+</html>

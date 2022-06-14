@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!--공통 CSS-->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+div{margin: 0px auto; width: 300px; height:200px}
+</style>
+<!-- jQuery CDN -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		//alert($("#id_child").val());
+		opener.window.document.frm.id.value=$("#id_child").val();
+		
+		
+		self.close();
+		
+	});//click
+});//ready
+</script>
+</head>
+<body>
+<form name="cFrm">
+<div>
+<input type="text" id="id_child" name="id_child" class="inputBox"/>
+<input type="button" id="btn" class="btn" value="중복확인"/></form>
+</div>
+</body>
+</html>

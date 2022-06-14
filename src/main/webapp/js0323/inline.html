@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert title here</title>
+<!-- 공통 CSS -->
+<link rel="stylesheet" type="text/css" href="http://211.63.89.143/html_prj/common/CSS/main_20220321.css">
+<style type="text/css">
+/* 디자인 시작 */
+#wrap{ width:1200px; height:1200px; margin: 50px auto;}
+
+#header{ height:230px; position: relative; 
+		background: #000000 url(http://localhost/html_prj/common/images/pattern2.png); }
+#headerText{ width:300px ; height:70px; position: absolute; top: 50px ; left:60px ; font-weight:bold;
+			font-size:40px; font-family:고딕;}
+#naviBar{ width:1200px; height:60px; position:absolute; top: 170px; }
+
+
+#container{ height:820px; }
+
+
+#footer{ height:230px;  position:relative; }
+#footerText{ float:right; padding-right: 20px; font-weight: bold; font-size: 20px; color:#2C272C;
+			padding-top: 40px }
+input{font-weight: bold;}
+/* 디자인 끝 */
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<div id="headerText">Class 4.</div>
+		<div id="naviBar">
+		
+		</div>
+	</div>
+	<div id="container">
+		<div>
+			inline방식으로 JavaScript사용
+			<input type="button" value="click" class="btn" onclick="alert('태그에 직접 정의')" 
+					style="padding-left: 20px; padding-right: 20px;"/>
+		</div>
+	
+	</div>
+	<div id="footer">
+		<div id="footerText">
+		CopyRight&copy;class 4. All Right Reserved.
+		</div>
+	</div>
+</div>
+</body>
+</html>
